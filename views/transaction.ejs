@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pocket Aces</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheet/main.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navToggle" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Loco</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navToggle">
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+          <div class="row">
+              <h1 style="text-align:center">Create a Loco Transaction</h1>
+              <div style="width:30%; margin: 20px auto;">
+                  <form action="/transactionService/createTransaction" method="POST">
+                      <div class="form-group">
+                          <input class="form-control" type="Number" placeholder="Amount" name="amount">
+                      </div>
+                      <div class="form-group">
+                          <input class="form-control" type="String" placeholder="Type" name="transaction_type">
+                      </div>
+                      <div class="form-group">
+                          <input class="form-control" type="Number" placeholder="Parent ID" name="parent_id" >
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-block btn-primary">Submit</button>
+                      </div>
+                  </form>
+                  <a href ="/">Reload</a>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+        <div class="row">
+            <h4 style="text-align:center"> Get Total Sum for a Parent</h4>
+            <div style="width:30%; margin: 20px auto;">
+                <form action="/transactionService/parent/:parent_id" method="GET">             
+                    <div class="form-group">
+                        <input class="form-control" type="String" placeholder="Parent ID" name="parent_id">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-block btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+      <div class="container">
+        <div class="row">
+            <h4 style="text-align:center"> Get Transaction</h4>
+            <div style="width:30%; margin: 20px auto;">
+                <form action="/transactionService/transaction" method="GET">             
+                    <div class="form-group">
+                        <input class="form-control" type="String" placeholder="Transaction ID" name="transaction_id">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-block btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
